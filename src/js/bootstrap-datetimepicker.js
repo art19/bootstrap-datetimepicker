@@ -134,11 +134,7 @@
              ********************************************************************************/
             getMoment = function (d) {
                 var tzEnabled = false,
-                    returnMoment,
-                    currentZoneOffset,
-                    incomingZoneOffset,
-                    timeZoneIndicator,
-                    dateWithTimeZoneInfo;
+                    returnMoment;
 
                 if (moment.tz !== undefined && options.timeZone !== undefined && options.timeZone !== null && options.timeZone !== '') {
                     tzEnabled = true;
@@ -151,7 +147,7 @@
                     }
                 } else {
                     if (tzEnabled) {
-                        returnMoment = moment.tz(d, parseFormats, options.useStrict, options.timeZone)
+                        returnMoment = moment.tz(d, parseFormats, options.useStrict, options.timeZone);
                     } else {
                         returnMoment = moment(d, parseFormats, options.useStrict);
                     }
